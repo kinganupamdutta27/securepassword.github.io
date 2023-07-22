@@ -61,3 +61,8 @@ if(val<8){
   passbox.value = y
 }
 }
+/*------------Copy Right Auto Year---------------------------------*/
+const d = new Date();
+let yr = d.getFullYear();
+console.log(yr)
+document.getElementById('spyr').textContent = yr
