@@ -26,10 +26,15 @@ class PasswordGenerate{
   }
   
 }
+const passlen = document.getElementById('passlen')
 const copybutton = document.getElementById('btn_copy')
 const genPassbutton = document.getElementById('btn')
 const passbox = document.getElementById('newpass')
 const alert1 = document.getElementById('alert1')
+const sizeofpass =  document.getElementById('sizeofpass')
+const divsizeofpass = document.getElementById('divsizeofpass')
+const crosBtn = document.getElementById('crosBtn')
+
 passbox.disabled=true;
 btn.addEventListener('click',generatePassword)
 copybutton.addEventListener('click',copy)
@@ -47,7 +52,7 @@ function copy(){
 }
 
 function generatePassword(){
-let val = document.getElementById('passlen').value
+let val = passlen.value
 let x = new PasswordGenerate()
 let y = x.genPass(val)
 if(val<8){
@@ -56,9 +61,75 @@ if(val<8){
     alert1.hidden=true
   },5000)
   passbox.disabled = true;
-}else{
+}
+else if(val>100000){
+  alert1.innerHTML = `<b>You need a extremely large size password of length ${val} characters long,  which may end your system resources and may the site will hang little bit.<b>....`
+  alert1.hidden=false
+  setTimeout(()=>{
+  alert1.hidden=true
+  },10000)
+  passbox.disabled = true;
+  /*------PassLOGIC------*/
+let passarray = y.split('') //Converting Password String to Array
+  let passarray_length = passarray.length //Total Length of Password Array
+  let halfArray = passarray_length/2 //Half of the Length of thé Password Array
+  
+  //console.log(passarray,halfArray, passarray_length,passarray[halfArray-1], passarray[passarray_length-1])//Output for better understanding
+  
+  //console.log(halfArray+halfArray/2)//Output for better understanding
+  
+  //Swiping logic Reverse of the Half of the array
+   for(let i=halfArray,j1=0; i<halfArray+halfArray/2;i++,j1++ ){
+     let x = passarray[i]
+     let y = passarray[(passarray_length-1)-j1]
+     //console.log("before: "+i+" "+ x +" "+ y)////Output for better understanding
+     let sw = x
+     x = y
+     y = sw
+      passarray[i] = x
+      passarray[(passarray_length-1)-j1] = y
+   }
+  
+  //console.log("After Swip: "+passarray)////Output for better understanding
+  const y1 = passarray.join("");// converting the array to the string without commas
+  //console.log(y)
+  //console.log(y1)
+  const sizeofpassword = y1.length;
+  console.log(sizeofpass.innerHTML=`Size of Your Password:\n ${sizeofpassword}`)
+  divsizeofpass.hidden=false;
   passbox.disabled = false;
-  passbox.value = y
+  passbox.value = y1 //DOM Printing in Input Box
+}
+else{
+  let passarray = y.split('') //Converting Password String to Array
+  let passarray_length = passarray.length //Total Length of Password Array
+  let halfArray = passarray_length/2 //Half of the Length of thé Password Array
+  
+  //console.log(passarray,halfArray, passarray_length,passarray[halfArray-1], passarray[passarray_length-1])//Output for better understanding
+  
+  //console.log(halfArray+halfArray/2)//Output for better understanding
+  
+  //Swiping logic Reverse of the Half of the array
+   for(let i=halfArray,j1=0; i<halfArray+halfArray/2;i++,j1++ ){
+     let x = passarray[i]
+     let y = passarray[(passarray_length-1)-j1]
+     //console.log("before: "+i+" "+ x +" "+ y)////Output for better understanding
+     let sw = x
+     x = y
+     y = sw
+      passarray[i] = x
+      passarray[(passarray_length-1)-j1] = y
+   }
+  
+  //console.log("After Swip: "+passarray)////Output for better understanding
+  const y1 = passarray.join("");// converting the array to the string without commas
+  //console.log(y)
+  //console.log(y1)
+  const sizeofpassword = y1.length;
+  console.log(sizeofpass.innerHTML=`Size of Your Password:\n ${sizeofpassword}`)
+  divsizeofpass.hidden=false;
+  passbox.disabled = false;
+  passbox.value = y1 //DOM Printing in Input Box
 }
 }
 /*------------Copy Right Auto Year---------------------------------*/
@@ -66,3 +137,9 @@ const d = new Date();
 let yr = d.getFullYear();
 console.log(yr)
 document.getElementById('spyr').textContent = yr
+/*------------------Cross Button Logic------------------*/
+crosBtn.addEventListener('click',closeAlert)
+
+function closeAlert(){
+  divsizeofpass.hidden=true;
+}

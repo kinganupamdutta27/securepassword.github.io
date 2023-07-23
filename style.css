@@ -1,39 +1,46 @@
 html {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
-body{
+
+body {
   background-color: #4158D0;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100%;
-    /* Set a minimum height for the body to cover the viewport */
-    margin: 0;
-    /* Remove default body margin */
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  /* Set a minimum height for the body to cover the viewport */
+  margin: 0;
+  /* Remove default body margin */
 }
-#div1{
+
+#div1 {
   align-items: center;
   align-self: center;
   position: relative;
   top: 85%;
   left: 50%;
-  transform: translate(-50%,-15%);
+  transform: translate(-50%, -15%);
 }
-.card{
+
+.card {
   width: 450px;
   align-items: center;
   border-radius: 20px;
-    background: #00F260;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #00F260;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0575E6, #00F260);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0575E6, #00F260);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border: #0f0080 solid;
 }
+
 .card:hover {
   transition-duration: 150ms;
   box-shadow: 0 5px 20px 5px #00000044;
@@ -47,110 +54,128 @@ background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, F
   left: 0;
   top: 0;
 }
-.card-header{
-  background: #0f0c29;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-color: white;
+
+.card-header {
+  background: #0f0c29;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
   border-radius: 17px !important;
   padding: 15px 76.5px;
   /*border-bottom: solid white;*/
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px !important;
 }
-.card-body{
-border-radius: 20px !important;
+
+.card-body {
+  border-radius: 20px !important;
 }
-#passlen{
-  width: 70px !important;
+
+#passlen {
+  margin: 0px 0px;
+  padding: 5px 0px;
+  width: 60px !important;
+  text-align: center !important;
+  font-weight: bold;
+  /* Make the text bold */
+  font-family: "Arial", sans-serif;
+  /* Change the font family */
 }
-td{
+
+td {
   padding: 10px 14px;
   margin: 15px 25px;
 }
-#label1{
+
+#label1 {
   font-family: 'Poppins', sans-serif;
 }
+
 /*----Button Style----*/
 .btn:link,
 .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 15px 40px;
-    margin-left:13px;
-    display: inline-block;
-    border-radius: 100px;
-    transition: all .2s;
-    position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  margin-left: 13px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    border: 1px solid blue;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid blue;
 }
 
 .btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
-    background-color: #fff;
-    color: #777;
+  background-color: #fff;
+  color: #777;
 }
 
 .btn::after {
-    content: "Generating Password";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
+  content: "Generating Password";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
 }
-#btn_copy::after{
-    content: "Copied";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
+
+#btn_copy::after {
+  content: "Copied";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
 }
 
 .btn-white::after {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
 }
 
 .btn-animated {
-    animation: moveInBottom 5s ease-out;
-    animation-fill-mode: backwards;
+  animation: moveInBottom 5s ease-out;
+  animation-fill-mode: backwards;
 }
 
 @keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
+
 /*----Button Style end----*/
-#np{
+#np {
   margin: 30px 0px !important;
   padding-bottom: 10px !important;
 }
@@ -182,19 +207,21 @@ td{
   border-bottom: 0.3rem solid transparent;
   transition: all 0.3s;
   height: 2px;
-  max-height:auto;
+  max-height: auto;
 }
 
-.form__input:placeholder-shown + .form__label {
+.form__input:placeholder-shown+.form__label {
   opacity: 0;
   visibility: hidden;
   -webkit-transform: translateY(-4rem);
   transform: translateY(-4rem);
 }
+
 /*---Password Textbox End----------*/
-#alert1{border-radius: 25px;
-        border: 2px solid red;
-       }
+#alert1 {
+  border-radius: 25px;
+  border: 2px solid red;
+}
 
 /*-------------- Heart Icon & Social Media and Email footer----------------------------- */
 .soc {
@@ -235,8 +262,8 @@ td{
 
 .footer-content {
   display: flex;
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .heart {
@@ -252,4 +279,60 @@ td{
   margin-right: 10px;
   color: #777;
   font-size: 20px;
+}
+
+/*-----------Size of Pass Box-------------*/
+.box {
+  border-radius: 20px;
+  height: auto;
+  width: auto;
+  margin-bottom: 10px;
+  padding: 15px 15px;
+  border: 2px solid #9e9e9e;
+  position: relative;
+  margin-top: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.box:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.red {
+  background-color: red;
+}
+
+#sizeofpass{
+  color: white;
+  font-family: 'Tektur', cursive;
+  font-size: 20px;
+  font-weight: 30px;
+  padding-top: 10px;
+}
+
+/*-----Alert Button---------*/
+#divsizeofpass {
+  position: relative;
+}
+
+#divsizeofpass .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+/*------cross image------*/
+#cros {
+  border-radius: 40px;
+}
+
+#crosBtn {
+  border-radius: 80px;
+  background-color: black;
 }
