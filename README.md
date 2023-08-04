@@ -1,4 +1,4 @@
-Title: GitHub Repository - Password Generator
+Title: Password Generator
 
 Description:
 1. Overview:
